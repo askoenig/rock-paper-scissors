@@ -25,6 +25,15 @@
           return "You lose! Paper beats rock."
     } }
 
-    
+    game = () => {
+        let win = 0;
+        for (let i = 0; i < 5; i++){
+            let result = playRound()
+            if (result.includes("win")){
+                win++
+            }
+        }
+        win === 5 ? "You win!" : "You lose!"
+    }
   </script>
 </html>
