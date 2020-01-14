@@ -5,7 +5,26 @@
     let rand = options[Math.floor(Math.random() * options.length)]
     return rand;
   }
+// rock beats scissors, scissors beats paper, paper beats rock
+  playRound = (playerSelection, compSelection) => {
+      let player = playerSelection.toLowercase();
+      let comp = compSelection.toLowercase()
+      if (player === comp) {
+          return "Tie!"
+      } else if (player === 'rock' && comp === 'scissors'){
+          return "You win! Rock beats scissors."
+      } else if (player === 'paper' && comp === 'rock'){
+          return "You win! Paper beats rock."
+      } else if (player === 'scissors' && comp === 'paper'){
+          return "You win! Scissors beats paper."
+      } else if (player === 'scissors' && comp === 'rock'){
+          return "You lose! Rock beats scissors."
+    } else if (player === 'paper' && comp === 'scissors'){
+          return "You lose! Scissors beats paper."
+    } else if (player === 'rock' && comp === 'paper'){
+          return "You lose! Paper beats rock."
+    } }
 
-  
+    
   </script>
 </html>
