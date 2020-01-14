@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissors</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      let computerPlay = () => {
+        let options = ["rock", "paper", "scissors"];
+        let rand = options[Math.floor(Math.random() * options.length)];
+        return rand;
+      };
+
+      // rock beats scissors, scissors beats paper, paper beats rock
+      let playRound = (playerSelection, compSelection) => {
+        let player = playerSelection.toLowerCase();
+        let comp = compSelection.toLowerCase();
+        if (player === comp) {
+          return "Tie!";
+        } else if (player === "rock" && comp === "scissors") {
+          return "You win! Rock beats scissors.";
+        } else if (player === "paper" && comp === "rock") {
+          return "You win! Paper beats rock.";
+        } else if (player === "scissors" && comp === "paper") {
+          return "You win! Scissors beats paper.";
+        } else if (player === "scissors" && comp === "rock") {
+          return "You lose! Rock beats scissors.";
+        } else if (player === "paper" && comp === "scissors") {
+          return "You lose! Scissors beats paper.";
+        } else if (player === "rock" && comp === "paper") {
+          return "You lose! Paper beats rock.";
+        }
+      };
+      let game = () => {
+        let win = 0;
+        for (let i = 0; i < 5; i++) {
+          let playerSelection = prompt("Rock, Paper, Scissors?");
+          let compSelection = computerPlay();
+          let result = playRound(playerSelection, compSelection);
+          if (result.includes("win")) {
+            win++;
+          }
+        }
+        if (win >= 3) {
+          return "You win!";
+        } else {
+          return "You lose!";
+        }
+      };
+
+      game();
+    </script>
+  </body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title>Page Title</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script>
+      var options = ["rock", "paper", "scissors"];
+      let my_score = 0;
+      let pc_score = 0;
+
+      game();
+      function computerSelection() {
+        let computerChoice;
+        computerChoice = options[Math.floor(Math.random() * options.length)];
+        return computerChoice;
+      }
+
+      function roundPlay(playerChoice, computerChoice) {
+        if (computerChoice == "rock" && playerChoice == "rock") {
+          alert("it's a tie!");
+        } else if (computerChoice == "rock" && playerChoice == "paper") {
+          alert("Good job! Paper wins over rock!");
+          my_score++;
+        } else if (computerChoice == "rock" && playerChoice == "scissors") {
+          alert("You lost! Scissors lose agaisnt rocks");
+          pc_score++;
+        } else if (computerChoice == "paper" && playerChoice == "rock") {
+          alert("You lost! Rock loses against paper!");
+          pc_score++;
+        } else if (computerChoice == "paper" && playerChoice == "paper") {
+          alert("it's a tie!");
+        } else if (computerChoice == "paper" && playerChoice == "scissors") {
+          alert("Good job! Scissors wins over paper!");
+          my_score++;
+        } else if (computerChoice == "scissors" && playerChoice == "rock") {
+          alert("Good job! Rock wins over scissors!");
+          my_score++;
+        } else if (computerChoice == "scissors" && playerChoice == "paper") {
+          alert("You lost! Paper loses to scissors!");
+          pc_score++;
+        } else if (computerChoice == "scissors" && playerChoice == "scissors") {
+          alert("The game is over, it's a tie!");
+        }
+      }
+
+      function winner(y) {
+        if (y == 6 && my_score > pc_score) {
+          alert("You won the game.");
+        } else if (y == 6 && my_score < pc_score) {
+          alert("You lost the game. Boo hoo!");
+        } else if (y == 6 && (my_score = pc_score)) {
+          alert("It is a tie.");
+        }
+      }
+
+      function game() {
+        var x = 1;
+        while (x >= 1 && x <= 5) {
+          ++x;
+          var player_Choice = prompt("Pick rock,paper,or scissors");
+          var playerChoice = player_Choice.toLowerCase();
+          roundPlay(playerChoice, computerSelection());
+          winner(x);
+        }
+      }
+    </script>
+  </body>
+</html> -->
