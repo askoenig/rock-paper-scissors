@@ -26,9 +26,11 @@
     } }
 
     game = () => {
+        let playerSelection = prompt("Rock, Paper, Scissors?");
+        let compSelection = computerPlay();
         let win = 0;
         for (let i = 0; i < 5; i++){
-            let result = playRound()
+            let result = playRound(playerSelection, compSelection)
             if (result.includes("win")){
                 win++
             }
