@@ -5,11 +5,15 @@ html {
 .gameDialogue {
   position: relative;
   text-align: center;
-  margin-top: 175px;
-  margin-bottom: 50px;
+  margin-top: 5px;
+  margin-bottom: 25px;
   font-size: 50px;
   color: white;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.imgsContainer {
+  text-align: center;
 }
 
 .buttonsContainer {
@@ -22,12 +26,36 @@ html {
   width: 260px;
   height: 70px;
   margin-left: auto;
-  margin-right: 15px;
+  margin-right: auto;
   font-size: xx-large;
   font-weight: bold;
   border-radius: 5px;
   border: 2px solid white;
   padding: 15px 15px 15px 15px;
+}
+
+#rockImg {
+  /* display: block; */
+  /* margin-left: auto; */
+  width: fit-content;
+  margin-top: -20px;
+  margin-bottom: 25px;
+  margin-right: 75px;
+}
+
+#paperImg {
+  display: inline;
+  margin-right: 35px;
+  /* margin: auto; */
+  /* margin-top: -20px;
+  margin-bottom: 25px; */
+}
+
+#scissorsImg {
+  /* display: inline; */
+  /* margin: auto; */
+  margin-top: -20px;
+  margin-bottom: 25px;
 }
 
 #rock {
@@ -44,4 +72,7 @@ html {
 
 #playAgain {
   background-color: red;
+  display: block;
+  margin-top: 30px;
+  margin-bottom: -20px;
 }

@@ -1,6 +1,14 @@
 const roundMessage = document.querySelector("#roundsLeft");
 const gameMessage = document.querySelector("#prompts");
 const buttons = document.querySelector(".buttonsContainer");
+const playAgainBtn = document.createElement("button");
+playAgainBtn.classList.add("button");
+playAgainBtn.id = "playAgain";
+playAgainBtn.innerHTML = "Play again?";
+
+let reloadpage = () => {
+  window.location.reload();
+};
 
 let computerPlay = () => {
   let options = ["rock", "paper", "scissors"];
@@ -66,22 +74,14 @@ let game = buttonPushed => {
   }
   if (rounds === 5 && win >= 3) {
     roundMessage.textContent = `You won ${win} out of 5 rounds! You win!`;
-    const playAgainBtn = document.createElement("button");
-    playAgainBtn.classList.add("playAgain");
-    playAgainBtn.innerHTML = "Play again?";
+    playAgainBtn.addEventListener("click", reloadpage);
     buttons.appendChild(playAgainBtn);
-    console.log(rounds.textContent);
   } else if (rounds === 5 && win < 3) {
     roundMessage.textContent = `You won ${win} out of 5 rounds! You lose!`;
-    const playAgainBtn = document.createElement("button");
-    playAgainBtn.classList.add("button");
-    playAgainBtn.id = "playAgain";
-    playAgainBtn.innerHTML = "Play again?";
+    playAgainBtn.addEventListener("click", reloadpage);
     buttons.appendChild(playAgainBtn);
-    console.log(rounds);
   } else {
     roundMessage.textContent = `${5 - rounds} round(s) left! Go again!`;
-    console.log(rounds);
   }
 };
 
