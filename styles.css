@@ -1,9 +1,14 @@
+html {
+  background-color: black;
+}
+
 #gameDialogue {
   position: relative;
   text-align: center;
   margin-top: 175px;
   margin-bottom: 50px;
   font-size: 50px;
+  color: white;
 }
 
 .buttonsContainer {
@@ -11,32 +16,27 @@
   /* margin-top: 25%; */
 }
 
+.button {
+  color: white;
+  width: 260px;
+  height: 70px;
+  margin-left: auto;
+  margin-right: 15px;
+  font-size: xx-large;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 2px solid white;
+  padding: 15px 15px 15px 15px;
+}
+
 #rock {
   background-color: rgb(0, 183, 255);
-  color: white;
-  width: 250px;
-  height: 60px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: xx-large;
 }
 
 #paper {
   background-color: darkgreen;
-  color: white;
-  width: 250px;
-  height: 60px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: xx-large;
 }
 
 #scissors {
   background-color: coral;
-  color: white;
-  width: 250px;
-  height: 60px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: xx-large;
 }
