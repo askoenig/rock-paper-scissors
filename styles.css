@@ -40,7 +40,7 @@ html {
   width: fit-content;
   margin-top: -20px;
   margin-bottom: 25px;
-  margin-right: 75px;
+  margin-right: 70px;
 }
 
 #paperImg {
@@ -60,10 +60,12 @@ html {
 
 #rock {
   background-color: rgb(0, 183, 255);
+  margin-right: 20px;
 }
 
 #paper {
   background-color: darkgreen;
+  margin-right: 20px;
 }
 
 #scissors {
