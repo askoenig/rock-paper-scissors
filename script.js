@@ -1,3 +1,6 @@
+const roundMessage = document.querySelector("#roundsLeft");
+const gameMessage = document.querySelector("#prompts");
+
 let computerPlay = () => {
   let options = ["rock", "paper", "scissors"];
   let rand = options[Math.floor(Math.random() * options.length)];
@@ -9,31 +12,31 @@ let playRound = (playerSelection, compSelection) => {
   let player = playerSelection.toLowerCase();
   let comp = compSelection.toLowerCase();
   if (player === comp) {
-    alert(`Computer also choose ${compSelection}! 
-      Tie!`);
+    gameMessage.textContent = `Computer also choose ${compSelection}! 
+      Tie!`;
   } else if (player === "rock" && comp === "scissors") {
-    alert(`Computer chose ${compSelection}! 
-        You win! Rock beats scissors.`);
+    gameMessage.textContent = `Computer chose ${compSelection}! 
+        You win! Rock beats scissors.`;
     return "win";
   } else if (player === "paper" && comp === "rock") {
-    alert(`Computer chose ${compSelection}!
-        You win! Paper beats rock.`);
+    gameMessage.textContent = `Computer chose ${compSelection}!
+        You win! Paper beats rock.`;
     return "win";
   } else if (player === "scissors" && comp === "paper") {
-    alert(`Computer chose ${compSelection}!
-        You win! Scissors beats paper.`);
+    gameMessage.textContent = `Computer chose ${compSelection}!
+        You win! Scissors beats paper.`;
     return "win";
   } else if (player === "scissors" && comp === "rock") {
-    alert(`Computer chose ${compSelection}!
-      You lose! Rock beats scissors.`);
+    gameMessage.textContent = `Computer chose ${compSelection}!
+      You lose! Rock beats scissors.`;
     return "lose";
   } else if (player === "paper" && comp === "scissors") {
-    alert(`Computer chose ${compSelection}!
-      You lose! Scissors beats paper.`);
+    gameMessage.textContent = `Computer chose ${compSelection}!
+      You lose! Scissors beats paper.`;
     return "lose";
   } else if (player === "rock" && comp === "paper") {
-    alert(`Computer chose ${compSelection}!
-      You lose! Paper beats rock.`);
+    gameMessage.textContent = `Computer chose ${compSelection}!
+      You lose! Paper beats rock.`;
     return "lose";
   }
 };
@@ -53,7 +56,7 @@ let game = buttonPushed => {
   //   alert(`Welcome to Rock, Paper, Scissors!
   //     Best out of 5 wins!`);
 
-  ++rounds;
+  rounds++;
   let playerSelection = buttonPushed;
   let compSelection = computerPlay();
   let result = playRound(playerSelection, compSelection);
@@ -61,14 +64,14 @@ let game = buttonPushed => {
     win++;
   }
   if (rounds === 5 && win >= 3) {
-    alert(`You won ${win} out of 5 rounds! You win!`);
-    //console.log(rounds);
+    roundMessage.textContent = `You won ${win} out of 5 rounds! You win!`;
+    console.log(rounds.textContent);
   } else if (rounds === 5 && win < 3) {
-    alert(`You won ${win} out of 5 rounds! You lose!`);
-    //console.log(rounds);
+    roundMessage.textContent = `You won ${win} out of 5 rounds! You lose!`;
+    console.log(rounds);
   } else {
-    alert(`${5 - rounds} round(s) left! Go again!`);
-    //console.log(rounds);
+    roundMessage.textContent = `${5 - rounds} round(s) left! Go again!`;
+    console.log(rounds);
   }
 };
 

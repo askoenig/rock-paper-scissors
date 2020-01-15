@@ -2,13 +2,24 @@ html {
   background-color: black;
 }
 
-#gameDialogue {
+.gameDialogue {
   position: relative;
   text-align: center;
   margin-top: 175px;
   margin-bottom: 50px;
   font-size: 50px;
   color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.roundDialogue {
+  position: relative;
+  text-align: center;
+  margin-top: 175px;
+  margin-bottom: 50px;
+  font-size: 50px;
+  color: white;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .buttonsContainer {
