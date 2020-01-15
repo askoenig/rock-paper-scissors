@@ -12,16 +12,6 @@ html {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.roundDialogue {
-  position: relative;
-  text-align: center;
-  margin-top: 175px;
-  margin-bottom: 50px;
-  font-size: 50px;
-  color: white;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-}
-
 .buttonsContainer {
   text-align: center;
   /* margin-top: 25%; */
@@ -50,4 +40,8 @@ html {
 
 #scissors {
   background-color: coral;
+}
+
+#playAgain {
+  background-color: red;
 }
