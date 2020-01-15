@@ -38,25 +38,38 @@ let playRound = (playerSelection, compSelection) => {
   }
 };
 
-let game = () => {
-  alert(`Welcome to Rock, Paper, Scissors!
-    Best out of 5 wins!`);
-  let win = 0;
-  for (let i = 0; i < 5; i++) {
-    let playerSelection = prompt("Rock, Paper, Scissors?");
-    let compSelection = computerPlay();
-    let result = playRound(playerSelection, compSelection);
-    if (result === "win") {
-      win++;
-    }
+const grabPlayerSelection = document.querySelectorAll(".button");
+for (let i = 0; i < grabPlayerSelection.length; i++) {
+  grabPlayerSelection[i].addEventListener("click", () => {
+    let buttonPushed = grabPlayerSelection[i].innerHTML;
+    game(buttonPushed);
+  });
+}
+
+let win = 0;
+let rounds = 0;
+
+let game = buttonPushed => {
+  //   alert(`Welcome to Rock, Paper, Scissors!
+  //     Best out of 5 wins!`);
+
+  ++rounds;
+  let playerSelection = buttonPushed;
+  let compSelection = computerPlay();
+  let result = playRound(playerSelection, compSelection);
+  if (result === "win") {
+    win++;
   }
-  if (win >= 3) {
+  if (rounds === 5 && win >= 3) {
     alert(`You won ${win} out of 5 rounds! You win!`);
-    return `You win!`;
-  } else {
+    //console.log(rounds);
+  } else if (rounds === 5 && win < 3) {
     alert(`You won ${win} out of 5 rounds! You lose!`);
-    return `You lose!`;
+    //console.log(rounds);
+  } else {
+    alert(`${5 - rounds} round(s) left! Go again!`);
+    //console.log(rounds);
   }
 };
 
-game();
+// game();
