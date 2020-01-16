@@ -62,9 +62,6 @@ let win = 0;
 let rounds = 0;
 
 let game = buttonPushed => {
-  //   alert(`Welcome to Rock, Paper, Scissors!
-  //     Best out of 5 wins!`);
-
   rounds++;
   let playerSelection = buttonPushed;
   let compSelection = computerPlay();
@@ -84,5 +81,3 @@ let game = buttonPushed => {
     roundMessage.textContent = `${5 - rounds} round(s) left! Go again!`;
   }
 };
-
-// game();
